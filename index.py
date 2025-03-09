@@ -9,3 +9,5 @@ with socket.socket() as server_sock:
     server_sock.bind((HOST,PORT))
 
     server_sock.listen(0)
+
+    print(f"listening on {HOST}:{PORT}")
