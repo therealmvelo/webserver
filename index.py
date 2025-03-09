@@ -19,9 +19,13 @@ with socket.socket() as server_sock:
 
     print(f"listening on {HOST}:{PORT}")
 
-    client_sock,client_addr = server_sock.accept()
+    
 
-    print(f"new connection from {client_addr}")
+    
 
-    with client_sock:
-        client_sock.sendall(RESPONSE)
+    while True:
+        client_sock,client_addr = server_sock.accept()
+        print(f"new connection from {client_addr}")
+        
+        with client_sock:
+            client_sock.sendall(RESPONSE)
